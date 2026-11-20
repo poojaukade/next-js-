@@ -1,6 +1,6 @@
 
 @import "tailwindcss";
-
+/* 
 :root {
   --background: #f8fafc;
   --foreground: #172033;
@@ -30,10 +30,10 @@ body {
   margin: 0;
 }
 
-a {
+/* a {
   text-decoration: none;
   color: inherit;
-}
+} */
 
 button,
 input,
@@ -44,4 +44,4 @@ textarea {
 ::selection {
   background: #ddd6fe;
   color: #312e81;
-}
+} */
