@@ -67,6 +67,7 @@ export default async function ProductsPage({
     </Link>
 
             <p>${product.price}</p>
+            <AddToCartButton product={product} />
           </div>
         ))}
       </div>

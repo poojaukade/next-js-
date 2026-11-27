@@ -3,6 +3,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import CartCount from "./cart/CartCount";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -56,7 +57,7 @@ export default function Navbar() {
         >
           Let's Talk
         </Link>
-
+<CartCount />
       </nav>
     </header>
   );

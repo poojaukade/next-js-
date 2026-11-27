@@ -1,3 +1,4 @@
+
 "use client";
 
 import {
@@ -11,9 +12,10 @@ import type { Product } from "@/types/product";
 type CartContextType = {
   cart: Product[];
   addToCart: (product: Product) => void;
+   removeFromCart: (productId: number) => void;
 };
 
-const CartContext = createContext<CartContextType | undefined>(
+ const CartContext = createContext<CartContextType | undefined>(
   undefined
 );
 
@@ -28,8 +30,14 @@ export function CartProvider({
     setCart((previousCart) => [...previousCart, product]);
   };
 
+  const removeFromCart = (productId: number) => {
+  setCart((previousCart) =>
+    previousCart.filter((product) => product.id !== productId)
+  );
+};
+
   return (
-    <CartContext.Provider value={{ cart, addToCart }}>
+    <CartContext.Provider value={{ cart, addToCart , removeFromCart}}>
       {children}
     </CartContext.Provider>
   );
@@ -37,7 +45,7 @@ export function CartProvider({
 
 export function useCart() {
   const context = useContext(CartContext);
-
+console.log("context", context);
   if (!context) {
     throw new Error("useCart must be used inside CartProvider");
   }
